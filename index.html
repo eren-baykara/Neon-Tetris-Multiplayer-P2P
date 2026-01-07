@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Tetris P2P</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+</head>
+<body>
+
+    <div id="login-screen" class="screen">
+        <div class="box">
+            <h1>NEON TETRIS <span class="subtitle">ONLINE</span></h1>
+
+            <div class="menu-options">
+                <button id="create-btn" disabled>Yükleniyor...</button>
+                <div class="divider-text">VEYA</div>
+                <input type="text" id="room-input" placeholder="Oda Kodunu Gir" maxlength="10">
+                <button id="join-btn" disabled>KATIL</button>
+            </div>
+
+            <div id="room-info" style="display:none; margin-top: 20px;">
+                <p>Oda Kodun:</p>
+                <div class="code-display">
+                    <span id="my-room-code">...</span>
+                </div>
+                <p class="status-msg">Rakip Bekleniyor...</p>
+            </div>
+            <div id="connection-status" style="margin-top: 10px; font-size: 0.8em; color: #888;">PeerJS Sunucusuna Bağlanıyor...</div>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen" style="display: none;">
+        <div class="game-container">
+            <div class="player-area">
+                <h2>SEN <span id="score">0</span></h2>
+                <canvas id="tetris-local" width="240" height="400"></canvas>
+            </div>
+
+            <div class="center-panel">
+                <div class="vs-badge">VS</div>
+                <div id="game-status">Hazırlanıyor...</div>
+                <button id="ready-btn">HAZIRIM</button>
+            </div>
+
+            <div class="opponent-area">
+                <h2>RAKİP <span id="opponent-score">0</span></h2>
+                <canvas id="tetris-remote" width="240" height="400"></canvas>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8rem;">
+            YÖN TUŞLARI ile oyna. YUKARI OK: Çevir.
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay" style="display: none;">
+        <div class="modal">
+            <h1 id="result-text">SONUÇ</h1>
+            <p id="result-subtext">...</p>
+            <button id="restart-btn" onclick="location.reload()">MENÜYE DÖN</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

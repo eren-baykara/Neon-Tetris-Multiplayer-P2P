@@ -1,0 +1,145 @@
+:root {
+    --bg-color: #050510;
+    --neon-blue: #0DC2FF;
+    --neon-pink: #FF0D72;
+    --text-color: #fff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    min-width: 300px;
+}
+
+h1 {
+    margin: 0 0 30px 0;
+    font-size: 2.5rem;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.subtitle {
+    color: var(--neon-pink);
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+input {
+    background: transparent;
+    border: 2px solid #555;
+    padding: 10px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 5px;
+    width: 80%;
+    margin: 10px 0;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--neon-blue);
+}
+
+button {
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.2s;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #555;
+}
+
+button:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.game-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+canvas {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #333;
+    display: block;
+}
+
+#tetris-local { border-color: var(--neon-blue); box-shadow: 0 0 15px rgba(13, 194, 255, 0.2); }
+#tetris-remote { border-color: var(--neon-pink); box-shadow: 0 0 15px rgba(255, 13, 114, 0.2); }
+
+.center-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+
+.vs-badge {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.code-display span {
+    font-size: 2rem;
+    color: var(--neon-pink);
+    letter-spacing: 5px;
+    font-weight: bold;
+    border: 1px dashed #555;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 10px 0;
+}

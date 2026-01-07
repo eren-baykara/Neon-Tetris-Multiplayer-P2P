@@ -1,5 +1,7 @@
 # 🕹️ Neon Tetris P2P (Multiplayer)
 
+[**🔴 CANLI OYNA / PLAY LIVE**](https://eren-baykara.github.io/Neon-Tetris-Multiplayer-P2P/)
+
 A real-time, browser-based multiplayer Tetris game developed as a side project to play with colleagues.
 
 ## 🚀 Key Features
